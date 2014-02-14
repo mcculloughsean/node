@@ -131,7 +131,7 @@ Highlighted styles and their default values are:
  * `special` - only function at this time (cyan)
  * `name` (intentionally no styling)
 
-Predefined color codes are: `white`, `grey`, `black`, `blue`, `cyan`, 
+Predefined color codes are: `white`, `grey`, `black`, `blue`, `cyan`,
 `green`, `magenta`, `red` and `yellow`.
 There are also `bold`, `italic`, `underline` and `inverse` codes.
 
@@ -163,6 +163,15 @@ formatted according to the returned Object. This is similar to how
 
     util.inspect(obj);
       // "{ bar: 'baz' }"
+
+## util.deprecate(fn, message)
+Mark that a method should not be used.  Returns a modified function
+which warns once by default.  If `--no-deprecation` is set, then it is a
+no-op.
+
+    var util = require('util');
+    var oldFunction = util.deprecate(function oldFunction() {}),
+      "Don't use oldFunction() anymore");
 
 
 ## util.isArray(object)
